@@ -73,7 +73,14 @@ def evaluate_retrieval_metrics(
         return {"recall_at_k": 0.0, "precision_at_k": 0.0, "mrr": 0.0, "ndcg_at_k": 0.0}
 
     top_k = list(retrieved_ids[:k])
-    hits = [1 if doc_id in relevant_ids else 0 for doc_id in top_k]
+    seen_relevant: Set[str] = set()
+    hits: List[int] = []
+    for doc_id in top_k:
+        if doc_id in relevant_ids and doc_id not in seen_relevant:
+            seen_relevant.add(doc_id)
+            hits.append(1)
+        else:
+            hits.append(0)
     num_hits = sum(hits)
 
     recall_at_k = num_hits / float(len(relevant_ids))
