@@ -1,0 +1,56 @@
+# Virtual Environment
+venv/
+env/
+.env
+.venv/
+ENV/
+study_guide_venv/
+*.webm
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Large files and directories
+*.dylib
+*.so
+*.dll
+*.pyd
+*.lib
+*.a
+*.o
+node_modules/
+downloaded_files/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

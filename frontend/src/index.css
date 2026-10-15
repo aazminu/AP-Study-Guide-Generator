@@ -1,0 +1,65 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  color: #202123;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Global layout classes */
+.app {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 260px; /* Matches sidebar width */
+  padding: 80px 20px 20px; /* Top padding for navbar */
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.sidebar-closed {
+  margin-left: 0;
+}
+
+/* For pages without sidebar */
+.full-width {
+  width: 100%;
+}
+
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px); /* Account for navbar */
+  width: 100%;
+  padding: 20px;
+}
+
+/* Navbar styles */
+
+
+
+
+/* Main content styles */
+
+
+
+
+
+
+
+
+
+
