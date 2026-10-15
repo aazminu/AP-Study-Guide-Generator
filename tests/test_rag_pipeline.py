@@ -106,3 +106,10 @@ def test_evaluate_retrieval_metrics():
     assert metrics["precision_at_k"] == pytest.approx(2.0 / 3.0, abs=1e-5)
     assert metrics["mrr"] == 1.0
     assert 0.9 < metrics["ndcg_at_k"] <= 1.0
+
+    # Duplicate chunks from the same document must not inflate Recall@K or nDCG@K above 1.0
+    dup_metrics = evaluate_retrieval_metrics(["doc_calc_1", "doc_calc_1", "doc_calc_1"], relevant, k=3)
+    assert dup_metrics["recall_at_k"] == 0.5
+    assert dup_metrics["precision_at_k"] == pytest.approx(1.0 / 3.0, abs=1e-5)
+    assert dup_metrics["ndcg_at_k"] <= 1.0
+
